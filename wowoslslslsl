@@ -1,0 +1,9 @@
+from keras.preprocessing.image import ImageDataGenerator
+
+datagen = ImageDataGenerator(brightness_range=[0.2, 1.0]) 
+
+train_generator = datagen.flow_from_directory(
+        'data_set/train',
+        target_size=(224, 224),
+        batch_size=32,
+        class_mode='categorical')
